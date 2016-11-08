@@ -45,6 +45,19 @@
         ,
     {% endif %}
 {% endfor %}
+{% if sumologic_system_metrics_enabled %}
+    ,
+{% endif %}
+{% endif %}
+{% if sumologic_system_metrics_enabled%}
+    {
+        "sourceType": "SystemStats",
+        "name": "Host_metrics",
+        "interval": {{ sumologic_system_metrics_interval }}
+        {% if sumologic_system_metrics_list is defined %}
+        , "metrics": {{ sumologic_system_metrics_list }}
+        {% endif %}
+    }
 {% endif %}
   ]
 }

@@ -16,3 +16,6 @@ sumologic_collector_timezone: "UTC"
 sumologic_collector_force_timzone: "false"
 sumologic_collector_default_log_path:
   - { name: "Sys Log", path: "/var/log/syslog.log", use_multiline: false, category: "OS/Linux/Syslog" }
+sumologic_system_metrics_enabled: false
+sumologic_system_metrics_interval: 60000
+#sumologic_system_metrics_list: []
